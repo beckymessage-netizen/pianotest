@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Style Guide | Melodious Ivories</title>
+  <link rel="icon" href="assets/images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@500&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/site.js" defer></script>
+  <style>
+    /* Style-guide-only helpers (not part of the site) */
+    .sg-block { display: flex; flex-direction: column; gap: 24px; }
+    .sg-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-blue); }
+    .sg-row { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+    .sg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 20px; }
+    .sg-swatch { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+    .sg-swatch span:first-child { height: 71px; border-radius: var(--radius-sm); border: 1px solid var(--color-divider-line); }
+    .sg-on-tan { padding: 24px; background: var(--color-bg-tan); border-radius: var(--radius-sm); }
+  </style>
+</head>
+<body>
+  <site-header current="home"></site-header>
+
+  <main>
+    <section class="section">
+      <div class="container sg-block">
+        <h1 class="headline">Style Guide</h1>
+        <p class="body-20">Every shared style and component from Figma. This page isn't linked from the site.</p>
+      </div>
+    </section>
+
+    <section class="section section--tan">
+      <div class="container sg-block">
+        <p class="sg-label">Typography</p>
+        <p class="headline">Headline</p>
+        <p class="h1">Heading 1</p>
+        <p class="h2">Heading 2</p>
+        <p class="h3">Heading 3</p>
+        <p class="body-20">Body 20 — Whether you are a beginner looking to touch the keys for the first time, or an advanced student seeking to refine your technique.</p>
+        <p class="body-16">Body 16 — Whether you are a beginner looking to touch the keys for the first time, or an advanced student seeking to refine your technique.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container sg-block">
+        <p class="sg-label">Colors</p>
+        <div class="sg-swatches">
+          <div class="sg-swatch"><span style="background:var(--color-primary)"></span><span>primary</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-primary-light)"></span><span>primary-light</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-accent-blue)"></span><span>accent/blue</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-divider-line)"></span><span>divider-line</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-bg-white)"></span><span>background/white</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-bg-tan)"></span><span>background/tan</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-bg-light-blue)"></span><span>background/light-blue</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-bg-blue-brighter)"></span><span>background/blue-brighter</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-text-heading)"></span><span>text/heading</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-text-body)"></span><span>text/body</span></div>
+          <div class="sg-swatch"><span style="background:var(--color-text-inverse)"></span><span>text/inverse</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light-blue">
+      <div class="container sg-block">
+        <p class="sg-label">Buttons (hover to see states)</p>
+        <div class="sg-row">
+          <a class="button button--primary" href="contact.html">Contact</a>
+          <a class="button button--secondary" href="contact.html">Contact</a>
+          <a class="button button--tertiary" href="about.html">Learn more <span class="button__arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <p class="sg-label">Link buttons</p>
+        <div class="sg-row">
+          <a class="link-button" href="#">Default</a>
+          <a class="link-button is-active" href="#">Active</a>
+        </div>
+
+        <p class="sg-label">Icon buttons</p>
+        <div class="sg-row">
+          <button class="icon-button icon-button--prev" type="button" aria-label="Previous">
+            <img src="assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+          <button class="icon-button" type="button" aria-label="Next">
+            <img src="assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container sg-block">
+        <p class="sg-label">Accordion</p>
+        <div class="accordion">
+          <div class="accordion-item">
+            <h3 class="accordion-item__heading">
+              <button class="accordion-item__trigger" type="button">
+                <span class="accordion-item__title">🎼 Music Reading &amp; Sight Reading</span>
+                <img class="accordion-item__icon" src="assets/icons/chevron-down.svg" alt="" width="24" height="24">
+              </button>
+            </h3>
+            <div class="accordion-item__panel">
+              <div class="accordion-item__panel-inner">
+                <p class="accordion-item__content">Students learn to read music fluently and develop sight-reading skills, enabling them to learn new pieces with greater confidence and independence.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item is-open">
+            <h3 class="accordion-item__heading">
+              <button class="accordion-item__trigger" type="button">
+                <span class="accordion-item__title">🎼 Music Reading &amp; Sight Reading (starts open)</span>
+                <img class="accordion-item__icon" src="assets/icons/chevron-down.svg" alt="" width="24" height="24">
+              </button>
+            </h3>
+            <div class="accordion-item__panel">
+              <div class="accordion-item__panel-inner">
+                <p class="accordion-item__content">Students learn to read music fluently and develop sight-reading skills, enabling them to learn new pieces with greater confidence and independence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container sg-block">
+        <p class="sg-label">Slider</p>
+        <div class="slider" data-slider aria-label="Testimonials">
+          <button class="icon-button icon-button--prev slider__prev" type="button" aria-label="Previous testimonial">
+            <img src="assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <div class="slider__slide">
+                <figure class="testimonial-card">
+                  <img class="testimonial-card__quote" src="assets/icons/quote.svg" alt="" width="37" height="37">
+                  <blockquote class="testimonial-card__text">Mrs. Angela is very conscientious, responsible, and patient, especially with young children. She always kindly reminds us about schedules and takes the time to discuss how to keep our child motivated, learning plans, and ways to help them improve. We are very grateful for her thoughtful teaching and highly recommend Mrs. Angela as a piano teacher.</blockquote>
+                  <figcaption class="testimonial-card__author">~ L.B., Former Studio Parent, Mississippi</figcaption>
+                </figure>
+              </div>
+              <div class="slider__slide">
+                <figure class="testimonial-card">
+                  <img class="testimonial-card__quote" src="assets/icons/quote.svg" alt="" width="37" height="37">
+                  <blockquote class="testimonial-card__text">Mrs. Angela is a gifted pianist and dedicated teacher who inspires students through her patience, creativity, and encouragement. My daughter studied with her for over two years, beginning at age five. She looked forward to every lesson and developed a strong foundation in both piano technique and music theory. It's no surprise that many of Mrs. Angela's students have earned awards at local and state piano auditions. Although we were sad to see her move away, we remain grateful for the lasting impact she had on our daughter's musical journey.</blockquote>
+                  <figcaption class="testimonial-card__author">~ W.W., Former Studio Parent, Mississippi</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <button class="icon-button slider__next" type="button" aria-label="Next testimonial">
+            <img src="assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+          <div class="slider__dots"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

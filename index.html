@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Melodious Ivories Piano Studio</title>
+  <meta name="description" content="Piano lessons in the Nashville area for young beginners, intermediate and advanced students, and adults. Building strong foundations and inspiring a love for music.">
+  <link rel="icon" href="assets/images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@500&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <site-header current="home"></site-header>
+
+  <main>
+    <!-- Banner -->
+    <section class="home-banner">
+      <img class="home-banner__image"
+           src="assets/images/home-banner-1200.jpg"
+           srcset="assets/images/home-banner-1200.jpg 1200w, assets/images/home-banner-2400.jpg 2400w"
+           sizes="100vw" width="2400" height="1591" alt="" fetchpriority="high">
+      <div class="home-banner__content">
+        <div class="home-banner__text">
+          <h1 class="headline">Building strong foundations. Inspiring a love for music.</h1>
+          <p class="body-20">Welcome to Melodious Ivories, where passion meets technique. Piano lessons in the Nashville area.</p>
+        </div>
+        <div class="home-banner__buttons">
+          <a class="button button--primary" href="lessons.html">Lessons</a>
+          <a class="button button--secondary" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: welcome -->
+    <section class="section section--divided">
+      <div class="container welcome">
+        <div class="welcome__text">
+          <div class="welcome__copy">
+            <h2 class="h2">Welcome to Angela’s Piano Studio</h2>
+            <p class="body-16">Welcome to Melodious Ivories Piano Studio. Whether you are a beginner looking to touch the keys for the first time, or an advanced student seeking to refine your technique, Angela is here to guide you on your musical journey.</p>
+          </div>
+          <a class="button button--tertiary" href="lessons.html">Learn more <span class="button__arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="welcome__photo">
+          <img src="assets/images/angela-at-piano.jpg" width="739" height="1100"
+               alt="Angela smiling, seated at an upright piano" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: who Angela teaches -->
+    <section class="section section--divided">
+      <div class="container teaches">
+        <h2 class="h2">Who Angela Teaches</h2>
+        <div class="squares-wrap">
+          <ul class="squares">
+            <li class="square square--peach">
+              <h3 class="h3">🎵 Young Beginners (Ages 4+)</h3>
+              <p class="body-16">Students are introduced to piano through a strong foundation in technique, note reading, rhythm, and musicianship in a fun and encouraging environment.</p>
+            </li>
+            <li class="square square--tan">
+              <h3 class="h3">🎼 Intermediate &amp; Advanced Students</h3>
+              <p class="body-16">Lessons focus on refining technique, developing artistry and musical expression, building confidence in performance, and exploring a wide variety of repertoire.</p>
+            </li>
+            <li class="square square--light-blue">
+              <h3 class="h3">🎵 Adult Students</h3>
+              <p class="body-16">Whether you're returning to the piano after many years or starting for the very first time, lessons are tailored to your goals, learning pace, and musical interests in a relaxed and supportive environment.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: testimonials -->
+    <section class="section section--tan">
+      <div class="container testimonials">
+        <h2 class="h2">Testimonials</h2>
+        <div class="slider" data-slider aria-label="Testimonials">
+          <button class="icon-button icon-button--prev slider__prev" type="button" aria-label="Previous testimonial">
+            <img src="assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+          <div class="slider__viewport">
+            <div class="slider__track">
+              <div class="slider__slide">
+                <figure class="testimonial-card">
+                  <img class="testimonial-card__quote" src="assets/icons/quote.svg" alt="" width="37" height="37">
+                  <blockquote class="testimonial-card__text">Mrs. Angela is very conscientious, responsible, and patient, especially with young children. She always kindly reminds us about schedules and takes the time to discuss how to keep our child motivated, learning plans, and ways to help them improve. We are very grateful for her thoughtful teaching and highly recommend Mrs. Angela as a piano teacher.</blockquote>
+                  <figcaption class="testimonial-card__author">~ L.B., Former Studio Parent, Mississippi</figcaption>
+                </figure>
+              </div>
+              <div class="slider__slide">
+                <figure class="testimonial-card">
+                  <img class="testimonial-card__quote" src="assets/icons/quote.svg" alt="" width="37" height="37">
+                  <blockquote class="testimonial-card__text">Mrs. Angela is a gifted pianist and dedicated teacher who inspires students through her patience, creativity, and encouragement. My daughter studied with her for over two years, beginning at age five. She looked forward to every lesson and developed a strong foundation in both piano technique and music theory. It's no surprise that many of Mrs. Angela's students have earned awards at local and state piano auditions. Although we were sad to see her move away, we remain grateful for the lasting impact she had on our daughter's musical journey.</blockquote>
+                  <figcaption class="testimonial-card__author">~ W.W., Former Studio Parent, Mississippi</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <button class="icon-button slider__next" type="button" aria-label="Next testimonial">
+            <img src="assets/icons/arrow-right.svg" alt="" width="24" height="24">
+          </button>
+          <div class="slider__dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: call to action -->
+    <section class="section">
+      <div class="container cta">
+        <div class="cta__text">
+          <h2 class="h2">Ready to reach your full potential?</h2>
+          <a class="button button--primary" href="contact.html">Get in touch!</a>
+        </div>
+        <div class="picture-group">
+          <div class="picture picture--students">
+            <img src="assets/images/students-studio.jpg" width="1984" height="1466"
+                 alt="Students gathered around a music game near the piano" loading="lazy">
+          </div>
+          <div class="picture picture--steinway">
+            <img src="assets/images/steinway-audition.jpg" width="768" height="994"
+                 alt="A student holding an award certificate beside Angela" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

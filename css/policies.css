@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Policies page
+   ========================================================================== */
+
+/* Frame the keyboard and sheet music, as in Figma */
+.page-banner--policies {
+  --banner-focus: center 35%;
+}
+
+/* Phones: keep the piano (not the striped shirt) behind the text */
+@media (max-width: 700px) {
+  .page-banner--policies {
+    --banner-focus: 30% 40%;
+  }
+}
+
+.policy-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Each policy block, separated by a divider with 48px either side */
+.policy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 48px;
+  border-top: 1px solid var(--color-divider-line);
+}
+
+.policy:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.policy:last-child {
+  padding-bottom: 0;
+}
+
+.policy__body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.policy__article-title {
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .policy {
+    gap: 16px;
+    padding-block: 36px;
+  }
+
+  .policy__body {
+    gap: 16px;
+  }
+}

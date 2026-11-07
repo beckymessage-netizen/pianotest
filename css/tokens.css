@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Design tokens — mirrors the "styles and fonts" section in Figma.
+   To add a new Figma style later, add a variable here and use it via var().
+   ========================================================================== */
+
+:root {
+  /* ---- Colors ---------------------------------------------------------- */
+  --color-primary: #a85436;
+  --color-primary-light: #d78261;
+  --color-accent-blue: #688ca1;
+  --color-accent-peach: #fff7e8;
+  --color-accent-tan: #f8eedc;
+  --color-divider-line: #d5d5d5;
+
+  --color-bg-white: #ffffff;
+  --color-bg-tan: #fcfaf6;
+  --color-bg-light-blue: #edf2f5;
+  --color-bg-blue-brighter: #e9f7ff;
+
+  --color-text-heading: #000000;
+  --color-text-body: #4e4e4e;
+  --color-text-inverse: #ffffff;
+
+  /* Secondary button hover (used in the Button component, not a named style) */
+  --color-white-button-hover: #f3f3f3;
+
+  /* ---- Font families --------------------------------------------------- */
+  --font-heading: "Lora", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-quote: "Cormorant Garamond", Georgia, serif;
+
+  /* ---- Type scale (desktop values; reduced at breakpoints below) -------- */
+  --fs-headline: 56px;   /* Headline  — Lora Medium, 1.2 */
+  --fs-h1: 48px;         /* Heading 1 — Lora Medium */
+  --fs-h2: 32px;         /* Heading 2 — Lora Medium */
+  --fs-h3: 24px;         /* Heading 3 — Lora Medium */
+  --fs-body-20: 20px;    /* Body 20   — Inter Regular, 1.5 */
+  --fs-body-16: 16px;    /* Body 16   — Inter Regular, 1.5 */
+  --fs-link: 20px;       /* link text — Inter Medium */
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --content-width: 1000px;
+  --gutter: 24px;          /* side padding around content */
+  --section-pad-y: 90px;   /* top/bottom padding of a web-section */
+
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 200ms;
+}
+
+/* Breakpoints (from the Figma overview):
+   mobile  ≤ 400px
+   tablet  401px – 1000px
+   desktop > 1000px                                                         */
+
+@media (max-width: 1000px) {
+  :root {
+    --fs-headline: 44px;
+    --fs-h1: 40px;
+    --fs-h2: 28px;
+    --fs-h3: 22px;
+    --section-pad-y: 74px;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --fs-headline: 36px;
+    --fs-h1: 32px;
+    --fs-h2: 26px;
+    --fs-h3: 20px;
+    --fs-body-20: 18px;
+    --fs-link: 18px;
+    --gutter: 16px;
+    --section-pad-y: 58px;
+  }
+}

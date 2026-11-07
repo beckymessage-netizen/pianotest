@@ -1,0 +1,312 @@
+/* ==========================================================================
+   Home page
+   ========================================================================== */
+
+.section--divided {
+  border-bottom: 1px solid var(--color-divider-line);
+}
+
+/* ---- Banner ------------------------------------------------------------ */
+
+.home-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 587px;
+  padding: 241px var(--gutter) 60px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.home-banner__image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  /* Keeps the girl's face in frame at every width */
+  object-position: 46% 60%;
+}
+
+.home-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    93.25deg,
+    rgba(0, 0, 0, 0.6) 2.25%,
+    rgba(4, 4, 4, 0.6) 38.93%,
+    rgba(216, 216, 216, 0) 99.22%
+  );
+}
+
+.home-banner__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+.home-banner__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 750px;
+}
+
+.home-banner__text .headline,
+.home-banner__text .body-20 {
+  color: var(--color-text-inverse);
+}
+
+.home-banner__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+@media (max-width: 1000px) {
+  .home-banner {
+    min-height: 0;
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-banner {
+    padding-top: 180px;
+    padding-bottom: 48px;
+  }
+
+  /* Text spans the full width here, so darken from below for legibility */
+  .home-banner::before {
+    background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0) 85%),
+      linear-gradient(93.25deg, rgba(0, 0, 0, 0.6) 2.25%, rgba(4, 4, 4, 0.6) 38.93%, rgba(216, 216, 216, 0) 99.22%);
+  }
+
+  .home-banner__buttons {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .home-banner {
+    padding-top: 140px;
+  }
+}
+
+/* ---- Section 1: welcome ------------------------------------------------ */
+
+.welcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 61px;
+}
+
+.welcome__text {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  min-width: 0;
+}
+
+.welcome__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Circle crop of the photo, positioned as in Figma */
+.welcome__photo {
+  flex-shrink: 0;
+  width: 389px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.welcome__photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 389 / 578;
+  max-width: none;
+  margin-top: -9.254%; /* 36px of 389px */
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .welcome {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .welcome__text {
+    align-self: stretch;
+  }
+}
+
+/* ---- Section 2: who Angela teaches ------------------------------------- */
+
+.teaches {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.squares-wrap {
+  container-type: inline-size;
+}
+
+/* Below 881px (3 × 275px + gaps) squares stop stretching and wrap at 275px */
+.squares {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.square {
+  display: flex;
+  flex: 0 0 275px;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 330px;
+  padding: 36px 26px 60px;
+  border-radius: 14px;
+  overflow-wrap: break-word;
+}
+
+@container (min-width: 881px) {
+  .square {
+    flex: 1 1 0;
+  }
+}
+
+/* Very narrow phones: never wider than the screen */
+@container (max-width: 275px) {
+  .square {
+    flex-basis: 100%;
+  }
+}
+
+.square--peach      { background: var(--color-accent-peach); }
+.square--tan        { background: var(--color-accent-tan); }
+.square--light-blue { background: var(--color-bg-light-blue); }
+
+/* ---- Section 3: testimonials ------------------------------------------- */
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.testimonials > .h2 {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .testimonials {
+    gap: 36px;
+  }
+}
+
+/* ---- Section 4: call to action + picture group ------------------------- */
+
+.cta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cta__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.picture-group {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Fixed sizes from Figma; max-width only kicks in on screens narrower than a photo */
+.picture {
+  position: relative;
+  flex-shrink: 0;
+  height: auto;
+  max-width: 100%;
+  overflow: hidden;
+  border: 7px solid var(--color-bg-light-blue);
+}
+
+.picture img {
+  position: absolute;
+  max-width: none;
+}
+
+.picture--students {
+  width: 324.8px;
+  aspect-ratio: 324.8 / 240;
+  border-radius: 22.05px;
+}
+
+.picture--students img {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.picture--steinway {
+  width: 206.07px;
+  aspect-ratio: 206.07 / 240;
+  border-radius: 15.69px;
+}
+
+.picture--steinway img {
+  left: -1.48%;
+  top: -15.18%;
+  width: 103.64%;
+  height: 115.18%;
+}
+
+/* Text above pictures once both no longer fit side by side */
+@media (max-width: 950px) {
+  .cta {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta__text {
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .cta__text {
+    width: 100%;
+  }
+}

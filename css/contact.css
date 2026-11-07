@@ -1,0 +1,284 @@
+/* ==========================================================================
+   Contact page
+   ========================================================================== */
+
+/* ---- Section 1: how to contact ------------------------------------------ */
+
+.how-to {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.how-to__text {
+  display: flex;
+  flex: 0 1 492px;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Fixed width from Figma (shrinks only on screens narrower than the card) */
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex-shrink: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 34px 40px;
+  border-radius: 14px;
+  background: var(--color-bg-tan);
+  list-style: none;
+}
+
+.contact-card__link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: var(--fs-body-20);
+  line-height: 1.5;
+  color: var(--color-text-heading);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color var(--duration) ease;
+}
+
+.contact-card__link img {
+  flex-shrink: 0;
+}
+
+.contact-card__link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .how-to {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how-to__text {
+    flex-basis: auto;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 400px) {
+  .contact-card {
+    padding: 28px 24px;
+  }
+
+  .contact-card__link {
+    gap: 14px;
+  }
+}
+
+/* ---- Section 2: form ---------------------------------------------------- */
+
+.form-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.form-section__title {
+  flex: 0 0 300px;
+}
+
+.form-embed {
+  flex: 0 1 635px;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 17px;
+  background: var(--color-bg-white);
+}
+
+/* Measured form height: ~795px wide, ~940px on the narrowest phones, plus
+   room for "required question" messages so the form never scrolls inside */
+.form-embed iframe {
+  display: block;
+  width: 100%;
+  height: 900px;
+  border: 0;
+}
+
+@media (max-width: 1000px) {
+  .form-section {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .form-section__title {
+    flex-basis: auto;
+  }
+
+  .form-embed {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-embed iframe {
+    height: 1040px;
+  }
+}
+
+/* ---- Section 3: location + quote --------------------------------------- */
+
+.location-section {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.location {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.location__text {
+  display: flex;
+  flex: 0 1 492px;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Map sits on the left on wide screens; the heading reads first when stacked */
+.location__map {
+  order: -1;
+  flex: 0 1 421px;
+  min-width: 0;
+  aspect-ratio: 421 / 374;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.location__map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 760px) {
+  .location {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .location__text {
+    flex-basis: auto;
+  }
+
+  .location__map {
+    order: 0;
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+.quote-card--centered {
+  align-items: center;
+  text-align: center;
+}
+
+/* ---- Banner ------------------------------------------------------------ */
+
+.contact-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 277px;
+  padding: 120px var(--gutter) 60px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-bg-light-blue);
+}
+
+.contact-banner__content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+.contact-banner__content > * {
+  max-width: 700px;
+}
+
+/* Music notes: a background layer behind the text, lined up with the 1000px
+   content column and anchored to its right edge (positions from Figma) */
+.contact-banner__notes {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: min(var(--content-width), 100% - var(--gutter) * 2);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.contact-banner__note {
+  position: absolute;
+  max-width: none;
+}
+
+.contact-banner__note--notes    { top: 34px;  right: 300px; } /* Vector */
+.contact-banner__note--ri       { top: 41px;  right: 81px;  }
+.contact-banner__note--mingcute { top: 142px; right: 66px;  }
+.contact-banner__note--jam      { top: 188px; right: -152px; }
+
+/* Tablet: shrink the notes and drop the one that would reach the text */
+@media (max-width: 900px) {
+  .contact-banner__notes {
+    transform: translateX(-50%) scale(0.75);
+    transform-origin: right top;
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-banner__note--notes {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-banner {
+    min-height: 240px;
+    padding-top: 96px;
+    padding-bottom: 48px;
+  }
+
+  /* Phones: two small notes tucked into the empty space above the title */
+  .contact-banner__notes {
+    transform: translateX(-50%) scale(0.6);
+  }
+
+  .contact-banner__note--mingcute,
+  .contact-banner__note--jam {
+    display: none;
+  }
+
+  .contact-banner__note--notes {
+    display: block;
+    top: 20px;
+    right: 150px;
+  }
+
+  .contact-banner__note--ri {
+    top: 30px;
+    right: 0;
+  }
+}

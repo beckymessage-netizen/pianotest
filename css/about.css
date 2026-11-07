@@ -1,0 +1,105 @@
+/* ==========================================================================
+   About page
+   ========================================================================== */
+
+/* ---- Section 1: photo + quote, header + bio ----------------------------- */
+
+.about-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 72px;
+}
+
+.about-bio {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 23px;
+  min-width: 0;
+}
+
+.about-bio__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* one blank line between paragraphs, as in Figma */
+}
+
+/* Photo + quote sit on the left on wider screens (bio comes first in the HTML
+   so it reads first when stacked on mobile) */
+.about-side {
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  gap: 51px;
+  width: 307px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.headshot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 307 / 423;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.headshot img {
+  position: absolute;
+  left: -0.06%;
+  top: -15.25%;
+  width: 105.98%;
+  height: 115.25%;
+  max-width: none;
+}
+
+@media (max-width: 1000px) {
+  .about-intro {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-intro {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .about-bio {
+    align-self: stretch;
+  }
+
+  .about-side {
+    order: 0;
+    gap: 32px;
+  }
+}
+
+/* ---- Section 2: teaching philosophy ------------------------------------ */
+
+.philosophy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
+}
+
+.philosophy__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 795px;
+}
+
+/* ---- Section 3: call to action ----------------------------------------- */
+
+.about-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
+}
